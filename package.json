@@ -1,13 +1,13 @@
 {
   "name": "krystal",
-  "version": "3.1.9",
+  "version": "3.2.0",
   "description": "krystal",
   "main": "main.js",
   "bin": {
     "krystal": "./krystal"
   },
   "scripts": {
-    "dev": "node main.js -s test.md -d test1.md",
+    "dev": "node transform.js -s test.md -d test1.md",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
