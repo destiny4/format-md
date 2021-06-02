@@ -39,7 +39,8 @@ str = str.replace(/`.+?`/g, function (val) {
   noNeedArr.push(val)
   return '$&&$'
 })
-const arr = str.split('\n\n')
+str=str.replace(/\n\n/g,'\n')
+const arr = str.split('\n')
 let arr1 = []
 for (let i = 0; i < arr.length; i++) {
   let item = arr[i]
@@ -49,7 +50,7 @@ for (let i = 0; i < arr.length; i++) {
   }
   if (program.split) {
     item = item.replace(
-      /[\-_@$`&\!.{\/]*[a-z]{1}[<>\[\]\w\-\d\.\+:\@`\?\/\s{}#&\$\*\\]*([a-z`}]?|[\.]{2,})/gi,
+      /[<\(\-_@$`&\!.{\/]*[a-z]{1}[<>\[\]\w\-\d\.\+:\@`\?\/\s{}#&\$\*\\\(\)=\"]*([a-z`}\)>]?|[\.]{2,})/gi,
       function (val) {
         const reg = /(\$&&\$)|(#\*\*#)|(\$\$&&)|(<br.*?>)/
         if (reg.test(val)) {
@@ -74,7 +75,7 @@ for (let i = 0; i < arr.length; i++) {
     )
   } else {
     item = item.replace(
-      /[\-_@$`&\!.{\/]*[a-z]{1}[<>\[\]\w\-\d\.\+:\@`\?\/\s{}#&\$\*\\]*([a-z`}]?|[\.]{2,})/gi,
+      /[<\(\-_@$`&\!.{\/]*[a-z]{1}[<>\[\]\w\-\d\.\+:\@`\?\/\s{}#&\$\*\\\(\)=\"]*([a-z`}\)>]?|[\.]{2,})/gi,
       function (val) {
         const reg = /(\$&&\$)|(#\*\*#)|(\$\$&&)|(<br.*?>)/
         if (reg.test(val)) {
@@ -100,7 +101,7 @@ for (let i = 0; i < arr.length; i++) {
   }
   arr1.push(item)
 }
-str = arr1.join('\n\n')
+str = arr1.join('\n')
 scriptArr.forEach(function (item) {
   str = str.replace('#**#', item)
 })

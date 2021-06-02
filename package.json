@@ -7,7 +7,7 @@
     "krystal": "./krystal"
   },
   "scripts": {
-    "dev": "node transform.js -s test.md -d test1.md",
+    "dev": "node main.js -s test.md -d test1.md",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
