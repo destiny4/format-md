@@ -42,7 +42,7 @@ str = str.replace(/`.+?`/g, function (val) {
 str=str.replace(/\n\n/g,'\n')
 const arr = str.split('\n')
 let arr1 = []
-const bestReg=/([<\(\-_@$`&\!.{\/]*[a-z]{1}[<>\[\]\w\-\d\.\,\+:\@`\?\/\s{}#&\$\*\\\(\)=;"]*[a-z]+([;,]?[\}`\(\)">\{\s]+)?([\.]{2,})?)|[a-z]/gi
+const bestReg=/([<\(\-_@$`&\!.{\/]*[a-z]{1}[<>\[\]\w\-\d\.\,\+:\@`\?\/\s{}#&\$\*\\\(\)=;"]*[a-z]+([;,]?[\}`\(\)"=>\{\s]+)?([\.]{2,})?)|[a-z]/gi
 for (let i = 0; i < arr.length; i++) {
   let item = arr[i]
   if (item.indexOf('#') === 0) {
